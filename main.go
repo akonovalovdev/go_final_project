@@ -24,6 +24,8 @@ func main() {
 
 	http.HandleFunc("/api/nextdate", handlers.NextDateHandler)
 	http.HandleFunc("/api/task", handlers.TaskHandler)
+	http.HandleFunc("/api/task/done", handlers.TaskDoneHandler)
+	http.HandleFunc("/api/tasks", handlers.TasksListHandler)
 
 	log.Printf("Server starting on port %s\n", port)
 	err := http.ListenAndServe(":"+port, nil)
